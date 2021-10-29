@@ -2,6 +2,7 @@
 
 
 class Division:
+    """Dividing numbers"""
     @staticmethod
     def divide(value_a: int, value_b: int):
         try:
