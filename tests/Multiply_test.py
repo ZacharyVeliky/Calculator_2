@@ -1,5 +1,6 @@
 """Testing multiplication"""
 from calc.operations.multiplication import Multiplication
+# pylint: disable=too-few-public-methods
 
 
 def test_multiply():
