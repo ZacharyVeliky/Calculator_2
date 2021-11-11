@@ -1,5 +1,6 @@
 """Testing division"""
 from calc.operations.division import Division
+# pylint: disable=too-few-public-methods
 
 
 def test_division():

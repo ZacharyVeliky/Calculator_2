@@ -1,5 +1,6 @@
 """ content of calculator.py#"""
 import calc.calculator as calc
+# pylint: disable=too-few-public-methods
 
 
 def test_answer():
