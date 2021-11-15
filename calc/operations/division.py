@@ -1,15 +1,26 @@
 """Division class"""
+from calc.operations.calculation import Calculation
+
+
 # pylint: disable=too-few-public-methods
 # pylint: disable=broad-except
-# pylint: disable=invalid-name
 
 
-class Division:
+class Division(Calculation):
     """Dividing numbers"""
-    @staticmethod
-    def divide(value_a: int, value_b: int):
+
+    def get_result(self):
         """Do the division if not dividing by zero"""
+        result = self.values
+        for value in self.values:
+            try:
+                return result / value
+            except Exception as error:  # change to raise
+                return error
+
+        result = int(self.values(0))
         try:
-            return value_a / value_b
+            result /= int(self.values(1))
+            return result
         except Exception as e:
-            return e
+            raise "Divided by zero"

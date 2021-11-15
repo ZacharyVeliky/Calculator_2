@@ -1,7 +1,11 @@
 """Testing addition"""
 from calc.operations.addition import Addition
+
+
 # pylint: disable=too-few-public-methods
 
 def test_addition():
-    """testing calc result -1"""
-    assert Addition.add(3, 2) == 5
+    """testing calc result"""
+    nums = (3.0, 2.0)
+    addition = Addition(nums)
+    assert addition.get_result() == 5.0

@@ -1,11 +1,16 @@
 """Subtraction class"""
 from calc.operations.calculation import Calculation
+
+
 # pylint: disable=too-few-public-methods
 
 
 class Multiplication(Calculation):
-    """Multiplying numbers"""
-    @staticmethod
-    def multiply(value_a: int, value_b: int):
-        """Do the multiplication"""
-        return value_a * value_b
+    """subtraction calculation object"""
+
+    def get_result(self):
+        """get the multiplication results"""
+        result = 1.0
+        for value in self.values:
+            result = result * value
+        return result
