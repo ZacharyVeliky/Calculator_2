@@ -10,7 +10,7 @@ def test_division():
     assert division.get_result() == 3
 
 
-def test_division():
+def test_divide_by_zero():
     """testing 3 divided by 2"""
     nums = (6, 0)
     division = Division(nums)

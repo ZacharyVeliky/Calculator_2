@@ -3,8 +3,7 @@ from calc.operations.calculation import Calculation
 
 
 # pylint: disable=too-few-public-methods
-# pylint: disable=broad-except
-
+# pylint: disable=unused-variable
 
 class Division(Calculation):
     """Dividing numbers"""
@@ -17,6 +16,8 @@ class Division(Calculation):
         for value in rev:
             try:
                 result = value / result
-            except Exception as error:
-                raise error
+                if result == 0:
+                    raise ZeroDivisionError
+            except ZeroDivisionError as error:
+                return ZeroDivisionError
         return result

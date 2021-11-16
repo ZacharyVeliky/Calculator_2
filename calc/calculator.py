@@ -1,8 +1,5 @@
 """ This is the increment function"""
-from calc.operations.addition import Addition
-from calc.operations.subtraction import Subtraction
-from calc.operations.multiplication import Multiplication
-from calc.operations.division import Division
+from calc.history.calculations import Calculations
 
 
 def inc(value_a):
@@ -12,31 +9,29 @@ def inc(value_a):
 
 class Calculator:
     """This is the calculator class"""
-    calculation = list[0]
-
-    def __init__(self):
-        self.result = 0
-
-    def get_result(self):
-        """get result of calculation"""
-        return self.result
 
     @staticmethod
-    def add_numbers(value_a, value_b):
+    def get_last_result_value():
+        """ This is the gets the result of the calculation"""
+        # I made this method so that I don't have more than one action per function
+        return Calculations.get_last_calculation_result_value()
+
+    @staticmethod
+    def add_numbers(tuple_num: tuple):
         """ Adds number to result"""
-        return Addition.add(value_a, value_b)
+        return Calculations.add_addition(tuple_num)
 
     @staticmethod
-    def subtract_numbers(value_a, value_b):
+    def subtract_numbers(tuple_num: tuple):
         """ Subtracts value a from value b"""
-        return Subtraction.subtract(value_a, value_b)
+        return Calculations.add_subtraction(tuple_num)
 
     @staticmethod
-    def multiply_numbers(value_a, value_b):
+    def multiply_numbers(tuple_num: tuple):
         """ Multiplies number with result"""
-        return Multiplication.multiply(value_a, value_b)
+        return Calculations.add_multiplication(tuple_num)
 
     @staticmethod
-    def divide_numbers(value_a, value_b):
+    def divide_numbers(tuple_num: tuple):
         """ Divides result by number"""
-        return Division.divide(value_a, value_b)
+        return Calculations.add_division(tuple_num)
