@@ -35,3 +35,11 @@ def test_calculator_multiply_static(clear_history_fixture):
     nums = (1.0, 2.0, 3.0)
     Calculator.multiply_numbers(nums)
     assert Calculator.get_last_result_value() == 6.0
+
+
+def test_calculator_divide_static(clear_history_fixture):
+    """Testing the subtract method of the calc"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    nums = (3.0, 2.0)
+    Calculator.divide_numbers(nums)
+    assert Calculator.get_last_result_value() == 1.5
