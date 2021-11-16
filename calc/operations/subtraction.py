@@ -5,7 +5,10 @@ from calc.operations.calculation import Calculation
 
 class Subtraction(Calculation):
     """Subtracting numbers"""
-    @staticmethod
-    def subtract(value_a: int, value_b: int):
-        """Do the subtraction"""
-        return value_a - value_b
+
+    def get_result(self):
+        """get the subtraction results"""
+        result = 0.0
+        for value in self.values:
+            result = result - value
+        return result

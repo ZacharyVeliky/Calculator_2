@@ -1,4 +1,5 @@
 """Subtraction class"""
+
 from calc.operations.calculation import Calculation
 
 

@@ -5,5 +5,6 @@ from calc.operations.subtraction import Subtraction
 
 def test_subtraction():
     """testing calc result -1"""
-
-    assert Subtraction.subtract(1, 2) == -1
+    nums = (2.0, 3.0)
+    subtract = Subtraction(nums)
+    assert subtract.get_result() == -5.0
