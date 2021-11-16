@@ -15,7 +15,7 @@ class Calculation:
 
     @staticmethod
     def convert_args_to_tuple_of_float(values):
-        """ standardize values to list of floats"""
+        """ Turn values to a list of floats"""
         list_values_float = []
         for item in values:
             list_values_float.append(float(item))
