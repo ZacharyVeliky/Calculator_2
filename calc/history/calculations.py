@@ -56,18 +56,18 @@ class Calculations:
 
     @staticmethod
     def add_subtraction(values):
-        """create a subtraction object to history using factory method create"""
+        """create a subtraction and add object to history using factory method create"""
         Calculations.add_calculation(Subtraction.create(values))
         return True
 
     @staticmethod
     def add_multiplication(values):
-        """Add a multiplication object to history using factory method create"""
+        """Add a multiplication and add object to history using factory method create"""
         Calculations.add_calculation(Multiplication.create(values))
         return True
 
     @staticmethod
     def add_division(values):
-        """Add a division object to history using factory method create"""
+        """Add a division and add object to history using factory method create"""
         Calculations.add_calculation(Division.create(values))
         return True
