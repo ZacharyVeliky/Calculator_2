@@ -1,13 +1,19 @@
 """Testing addition"""
-from calc.operations.addition import Addition
-from pathlib import Path
 import pandas as pd
+from calc.operations.addition import Addition
 
 
 # pylint: disable=too-few-public-methods
 
-def test_addition():
+def test_addition_10_val():
     """testing calc result"""
-    nums = pd.read_csv("10val1.csv", sep=",")
+    nums = pd.read_csv('tests/csv/10_1.csv')
     addition = Addition(nums)
-    assert addition.get_result() == 5.0
+    assert addition.get_result() == 10
+
+
+def test_addition_10000_val():
+    """testing calc result"""
+    nums = pd.read_csv('tests/csv/10000_1.csv')
+    addition = Addition(nums)
+    assert addition.get_result() == 196141

@@ -1,5 +1,4 @@
-"""Subtraction class"""
-
+"""Multiplication class"""
 from calc.operations.calculation import Calculation
 
 
@@ -7,7 +6,7 @@ from calc.operations.calculation import Calculation
 
 
 class Multiplication(Calculation):
-    """subtraction calculation object"""
+    """multiplication calculation object"""
 
     def get_result(self):
         """get the multiplication results"""

@@ -6,7 +6,7 @@ class Calculation:
 
     def __init__(self, values: tuple):
         """ constructor method"""
-        self.values = Calculation.convert_args_to_tuple_of_float(values)
+        self.values = Calculation.convert_args_to_tuple(values)
 
     @classmethod
     def create(cls, values: tuple):
@@ -14,9 +14,9 @@ class Calculation:
         return cls(values)
 
     @staticmethod
-    def convert_args_to_tuple_of_float(values):
+    def convert_args_to_tuple(values):
         """ Turn values to a list of floats"""
-        list_values_float = []
+        args_to_tuple = []
         for item in values:
-            list_values_float.append(float(item))
-        return tuple(list_values_float)
+            args_to_tuple.append(float(item))
+        return tuple(args_to_tuple)

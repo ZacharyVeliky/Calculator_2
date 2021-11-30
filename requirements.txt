@@ -1,3 +1,5 @@
-pytest
+pytest~=6.2.5
 pycodestyle
 pytest-pylint
+pandas
+setuptools~=57.0.0
