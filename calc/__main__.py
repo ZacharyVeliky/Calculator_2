@@ -3,7 +3,7 @@ import os
 
 import pandas as pd
 
-from operations.addition import Addition
+from calc.operations.addition import Addition
 
 dir_name = os.path.dirname(__file__)
 folder = os.path.join(dir_name, 'input')
