@@ -12,5 +12,5 @@ class Addition(Calculation):
         """Do the addition"""
         result = 0.0
         for value in self.values:
-            result = value + result
+            result += value
         return result

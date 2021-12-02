@@ -4,7 +4,7 @@ from abc import abstractmethod
 from calc.operations.calculation import Calculation
 
 
-# pylint: disable=too-few-public-methods
+# pylint: disable=too-few-public-methods, missing-function-docstring
 
 class Math(Calculation):
     """Subtracting numbers"""

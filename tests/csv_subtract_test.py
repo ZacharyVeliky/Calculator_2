@@ -3,7 +3,7 @@ import glob
 import os
 
 import pandas as pd
-from calc.operations.addition import Addition
+from calc.operations.subtraction import Subtraction
 
 # pylint: disable=too-few-public-methods, unnecessary-comprehension, consider-using-with, unspecified-encoding
 
@@ -16,11 +16,11 @@ f = open("tests/log.txt", 'a')
 
 def test_addition_10_val_1():
     """testing calc result"""
-    nums = pd.read_csv('tests/csv/10val.csv')
+    nums = pd.read_csv('tests/csv/10val1.csv')
     num_list = [item for item in nums]
     nums_tuple = tuple(num_list)
-    addition = Addition(nums_tuple)
-    assert int(addition.get_result()) == 123
+    subtraction = Subtraction(nums_tuple)
+    assert int(subtraction.get_result()) == -89
 
 
 def test_addition_10_val_2():
@@ -28,8 +28,8 @@ def test_addition_10_val_2():
     nums = pd.read_csv('tests/csv/10val2.csv')
     num_list = [item for item in nums]
     nums_tuple = tuple(num_list)
-    addition = Addition(nums_tuple)
-    assert int(addition.get_result()) == 133
+    subtraction = Subtraction(nums_tuple)
+    assert int(subtraction.get_result()) == -133
 
 
 def test_addition_10_val_3():
@@ -37,8 +37,8 @@ def test_addition_10_val_3():
     nums = pd.read_csv('tests/csv/10val3.csv')
     num_list = [item for item in nums]
     nums_tuple = tuple(num_list)
-    addition = Addition(nums_tuple)
-    assert int(addition.get_result()) == 98
+    subtraction = Subtraction(nums_tuple)
+    assert int(subtraction.get_result()) == -98
 
 
 def test_addition_10_val_4():
@@ -46,17 +46,17 @@ def test_addition_10_val_4():
     nums = pd.read_csv('tests/csv/10val4.csv')
     num_list = [item for item in nums]
     nums_tuple = tuple(num_list)
-    addition = Addition(nums_tuple)
-    assert int(addition.get_result()) == 108
+    subtraction = Subtraction(nums_tuple)
+    assert int(subtraction.get_result()) == -108
 
 
 def test_addition_10000_val_1():
     """testing calc result"""
-    nums = pd.read_csv('tests/csv/10000val.csv')
+    nums = pd.read_csv('tests/csv/10000val1.csv')
     num_list = [item for item in nums]
     nums_tuple = tuple(num_list)
-    addition = Addition(nums_tuple)
-    assert int(addition.get_result()) == 49890601
+    subtraction = Subtraction(nums_tuple)
+    assert int(subtraction.get_result()) == -50167282
 
 
 def test_addition_10000_val_2():
@@ -64,8 +64,8 @@ def test_addition_10000_val_2():
     nums = pd.read_csv('tests/csv/10000val2.csv')
     num_list = [item for item in nums]
     nums_tuple = tuple(num_list)
-    addition = Addition(nums_tuple)
-    assert int(addition.get_result()) == 49341183
+    subtraction = Subtraction(nums_tuple)
+    assert int(subtraction.get_result()) == -49341183
 
 
 def test_addition_10000_val_3():
@@ -73,8 +73,8 @@ def test_addition_10000_val_3():
     nums = pd.read_csv('tests/csv/10000val3.csv')
     num_list = [item for item in nums]
     nums_tuple = tuple(num_list)
-    addition = Addition(nums_tuple)
-    assert int(addition.get_result()) == 49831624
+    subtraction = Subtraction(nums_tuple)
+    assert int(subtraction.get_result()) == -49831624
 
 
 def test_addition_10000_val_4():
@@ -82,8 +82,8 @@ def test_addition_10000_val_4():
     nums = pd.read_csv('tests/csv/10000val4.csv')
     num_list = [item for item in nums]
     nums_tuple = tuple(num_list)
-    addition = Addition(nums_tuple)
-    assert int(addition.get_result()) == 50037047
+    subtraction = Subtraction(nums_tuple)
+    assert int(subtraction.get_result()) == -50037047
 
 
 f.close()

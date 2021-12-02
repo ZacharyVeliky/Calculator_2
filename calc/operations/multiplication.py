@@ -13,4 +13,5 @@ class Multiplication(Calculation):
         result = 1.0
         for value in self.values:
             result = result * value
+            print(result)
         return result
