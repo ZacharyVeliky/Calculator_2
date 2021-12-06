@@ -14,15 +14,15 @@ class Calculator:
     #tuple allows me to pass in as many values as a I want
     def addition(tuple_values: tuple):
         """ adds list of numbers"""
-        Calculations.add_addition_calculation_to_history(tuple_values)
+        Calculations.add_addition(tuple_values)
         return True
     @staticmethod
     def subtraction(tuple_values: tuple):
         """ subtract a list of numbers from result"""
-        Calculations.add_subtraction_calculation_to_history(tuple_values)
+        Calculations.add_subtraction(tuple_values)
         return True
     @staticmethod
     def multiplication(tuple_values: tuple):
         """ multiplication number from result"""
-        Calculations.add_multiplication_calculation_to_history(tuple_values)
+        Calculations.add_multiplication(tuple_values)
         return True
