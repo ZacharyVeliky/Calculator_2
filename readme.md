@@ -1,8 +1,10 @@
-# Calculator 2
-[![Build Status](https://app.travis-ci.com/ZacharyVeliky/Calculator_2.svg?branch=main)](https://app.travis-ci.com/ZacharyVeliky/Calculator_2)
+# Calculator Project Setup
+[![Build Status](https://app.travis-ci.com/kaw393939/calc2.svg?branch=main)](https://app.travis-ci.com/kaw393939/calc2)
 
-##Pytest Results
-![Pytest](https://github.com/ZacharyVeliky/Calculator_2/blob/main/pytest_screenshots/pytest.png)
+To run tests, Lint, and Coverage report use this command:
 
-##Pylint Results
-![Pylint](https://github.com/ZacharyVeliky/Calculator_2/blob/main/pytest_screenshots/pylint.png)
+pytest  --pylint --cov
+
+.pylintrc is the config for pylint
+.coveragerc is the config for coverage
+setup.py is a config file for pytest
