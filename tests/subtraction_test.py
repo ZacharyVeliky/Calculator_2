@@ -1,11 +1,10 @@
-"""Testing Subtraction"""
-from calc.calculations.subtraction import Subtraction
+"""Testing subtraction"""
+from calc.operations.subtraction import Subtraction
+# pylint: disable=too-few-public-methods
 
-def test_calculation_subtraction():
-    """testing that our calculator has a static method for addition"""
-    #Arrange
-    mynumbers = (1.0,2.0)
-    subtraction = Subtraction(mynumbers)
-    #Act
-    #Assert
-    assert subtraction.get_result() == -3
+
+def test_subtraction():
+    """testing calc result -1"""
+    nums = (2.0, 3.0)
+    subtract = Subtraction(nums)
+    assert subtract.get_result() == -5.0
