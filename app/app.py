@@ -2,6 +2,7 @@
 from flask import Flask, render_template
 from app.controllers.index_controller import IndexController
 from app.controllers.calculator_controller import CalculatorController
+from app.table import User
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -23,6 +24,6 @@ def calculator_post():
 
 
 @app.route("/table", methods=['GET'])
-def table():
+def table_get():
     users = User.query
-    return render_template('/table.html', users=users)
+    return render_template('table.html')
