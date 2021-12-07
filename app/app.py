@@ -20,3 +20,10 @@ def calculator_get():
 @app.route("/calculator", methods=['POST'])
 def calculator_post():
     return CalculatorController.post()
+
+
+@app.route('/table')
+def table():
+    users = User.query
+    return render_template('/table.html', title='Bootstrap Table',
+                           users=users)
