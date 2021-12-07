@@ -1,5 +1,5 @@
 """A simple flask web app"""
-from flask import Flask
+from flask import Flask, render_template
 from app.controllers.index_controller import IndexController
 from app.controllers.calculator_controller import CalculatorController
 
@@ -24,6 +24,5 @@ def calculator_post():
 
 @app.route('/table')
 def table():
-    users = User.query
-    return render_template('/table.html', title='Bootstrap Table',
-                           users=users)
+    # users = User.query, users=users
+    return render_template('table.html')
