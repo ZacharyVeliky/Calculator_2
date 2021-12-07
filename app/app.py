@@ -24,5 +24,5 @@ def calculator_post():
 
 @app.route("/table", methods=['GET'])
 def table():
-    # users = User.query, users=users
-    return render_template('table.html')
+    users = User.query
+    return render_template('/table.html', users=users)
