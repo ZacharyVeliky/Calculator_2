@@ -1,8 +1,8 @@
 """A simple flask web app"""
 from flask import Flask, render_template
-from app.controllers.index_controller import IndexController
-from app.controllers.calculator_controller import CalculatorController
-from app.table import User
+from controllers.index_controller import IndexController
+from controllers.calculator_controller import CalculatorController
+from table import User
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
