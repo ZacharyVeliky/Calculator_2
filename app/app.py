@@ -22,7 +22,7 @@ def calculator_post():
     return CalculatorController.post()
 
 
-@app.route('/table')
+@app.route("/table", methods=['GET'])
 def table():
     users = User.query
     return render_template('/table.html', title='Bootstrap Table',
