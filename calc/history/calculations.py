@@ -8,8 +8,16 @@ from calc.operations.division import Division
 class Calculations:
     """Calculations class manages the history of calculations"""
     history = []
-
     # pylint: disable=too-few-public-methods
+
+    @staticmethod
+    def readHistoryFromCSV():
+        """Read the history from csv and put it into the history """
+
+    @staticmethod
+    def writeHistoryToCSV():
+        """Write the history to csv file"""
+
     @staticmethod
     def clear_history():
         """clear the history of calculations"""
