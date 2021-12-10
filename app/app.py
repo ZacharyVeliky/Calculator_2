@@ -1,5 +1,6 @@
 """A simple flask web app"""
 from flask import Flask, render_template
+
 from controllers.index_controller import IndexController
 from controllers.calculator_controller import CalculatorController
 from table import User
