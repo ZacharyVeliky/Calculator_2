@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
@@ -7,21 +7,20 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
-class User(db.Model):
+class Operations(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64), index=True)
-    age = db.Column(db.Integer, index=True)
-    address = db.Column(db.String(256))
-    phone = db.Column(db.String(20))
-    email = db.Column(db.String(120))
+    input_1 = db.Column(db.String(64), index=True)
+    input_2 = db.Column(db.Integer, index=True)
+    operation = db.Column(db.String(256))
+    result = db.Column(db.String(20))
 
     def to_dict(self):
         return {
-            'name': self.name,
-            'age': self.age,
-            'address': self.address,
-            'phone': self.phone,
-            'email': self.email
+            'id': self.id,
+            'input_1': self.input_1,
+            'input_2': self.input_2,
+            'operation': self.operation,
+            'result': self.result
         }
 
 
@@ -35,14 +34,14 @@ def index():
 
 @app.route('/api/data')
 def data():
-    query = User.query
+    query = Operations.query
 
     # search filter
     search = request.args.get('search[value]')
     if search:
         query = query.filter(db.or_(
-            User.name.like(f'%{search}%'),
-            User.email.like(f'%{search}%')
+            Operations.name.like(f'%{search}%'),
+            Operations.email.like(f'%{search}%')
         ))
     total_filtered = query.count()
 
@@ -54,10 +53,10 @@ def data():
         if col_index is None:
             break
         col_name = request.args.get(f'columns[{col_index}][data]')
-        if col_name not in ['name', 'age', 'email']:
-            col_name = 'name'
+        if col_name not in ['input_1', 'input_2', 'operation']:
+            col_name = 'id'
         descending = request.args.get(f'order[{i}][dir]') == 'desc'
-        col = getattr(User, col_name)
+        col = getattr(Operations, col_name)
         if descending:
             col = col.desc()
         order.append(col)
@@ -74,7 +73,7 @@ def data():
     return {
         'data': [user.to_dict() for user in query],
         'recordsFiltered': total_filtered,
-        'recordsTotal': User.query.count(),
+        'recordsTotal': Operations.query.count(),
         'draw': request.args.get('draw', type=int),
     }
 

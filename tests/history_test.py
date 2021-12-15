@@ -41,7 +41,7 @@ def test_get_calculation(clear_history_fixture, setup_addition_fixture):
 
 def test_get_calc_last_result_value(clear_history_fixture, setup_addition_fixture):
     """Testing getting the last calculation from the history"""
-    assert Calculations.get_last_calculation_result_value() == 6.0
+    assert Calculations.get_last_calculation_result() == 6.0
 
 
 def test_get_calculation_first(clear_history_fixture, setup_addition_fixture):

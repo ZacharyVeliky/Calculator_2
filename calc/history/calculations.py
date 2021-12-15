@@ -1,8 +1,12 @@
 """Calculation history Class"""
+import os.path
+
+from app.table_handler.table import data
 from calc.operations.addition import Addition
 from calc.operations.subtraction import Subtraction
 from calc.operations.multiplication import Multiplication
 from calc.operations.division import Division
+from csvmanager.write import Write
 
 
 class Calculations:
@@ -10,6 +14,16 @@ class Calculations:
     history = []
 
     # pylint: disable=too-few-public-methods
+
+    @staticmethod
+    def readHistoryFromCSV():
+        """Read the history from csv and put it into the history """
+
+    @staticmethod
+    def writeHistoryToCSV(data):
+        """Write the history to csv file"""
+        Write.ToCSV(os.path.abspath('history.csv'), data)
+
     @staticmethod
     def clear_history():
         """clear the history of calculations"""
@@ -27,7 +41,7 @@ class Calculations:
         return Calculations.history[-1]
 
     @staticmethod
-    def get_last_calculation_result_value():
+    def get_last_calculation_result():
         """get last calculation"""
         calculation = Calculations.get_last_calculation_object()
         return calculation.get_result()

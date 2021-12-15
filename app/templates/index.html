@@ -7,10 +7,9 @@
     </style>
 {% endblock %}
 {% block content %}
-    <h1>Index I should see this change with a page refresh</h1>
-    <h1>Test</h1>
-    <p class="important">
-      Welcome to my awesome homepage.
-        <img src="{{ url_for('static', filename='images/sample.jpeg') }}">
-    </p>
+    <div class="container-fluid bg-1 text-center">
+        <h1>Web Calculator Project</h1>
+        <h2>Home</h2>
+        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="image">
+    </div>
 {% endblock %}

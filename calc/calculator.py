@@ -11,7 +11,7 @@ class Calculator:
     def get_last_result_value():
         """ This is the gets the result of the calculation"""
         # I made this method so that I don't have more than one action per function
-        return Calculations.get_last_calculation_result_value()
+        return Calculations.get_last_calculation_result()
 
     @staticmethod
     # tuple allows me to pass in as many values as I want
@@ -37,3 +37,19 @@ class Calculator:
         """ multiplication number from result"""
         Calculations.add_division(tuple_values)
         return True
+
+    @staticmethod
+    def getHistory():
+        """ Get history """
+        return Calculations.history
+        # return Calculations.get_last_calculation_result_value()
+
+    @staticmethod
+    def getHistoryFromCSV():
+        """ Get history """
+        return Calculations.readHistoryFromCSV()
+
+    @staticmethod
+    def writeHistoryToCSV(data):
+        """ Add to history """
+        Calculations.writeHistoryToCSV(data)

@@ -1,14 +1,14 @@
 {% extends "base.html" %}
-
+{% block title %}Calculator{% endblock %}
 {% block content %}
   <table id="data" class="table table-striped">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Address</th>
-        <th>Phone Number</th>
-        <th>Email</th>
+        <th>ID</th>
+        <th>Input 1</th>
+        <th>Input 2</th>
+        <th>Operation</th>
+        <th>Result</th>
       </tr>
     </thead>
     <tbody>
@@ -23,11 +23,11 @@
         ajax: '/api/data',
         serverSide: true,
         columns: [
-          {data: 'name'},
-          {data: 'age'},
-          {data: 'address', orderable: false},
-          {data: 'phone', orderable: false},
-          {data: 'email'}
+          {data: 'id'},
+          {data: 'input_1'},
+          {data: 'input_2', orderable: false},
+          {data: 'operation', orderable: false},
+          {data: 'result'}
         ],
       });
     });

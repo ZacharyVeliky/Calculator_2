@@ -3,23 +3,52 @@
 {% block head %}
     {{ super() }}
     <style type="text/css">
-        .important { color: #336699; }
+        .important {
+            color: #336699;
+        }
     </style>
 {% endblock %}
 {% block content %}
+  <div class="container-fluid bg-1 text-center">
     <h1>Calculation Result</h1>
     {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success" role="alert">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <strong>Value 1: </strong> {{ value1 }} <br>
     <strong>Value 2: </strong> {{ value2 }} <br>
     <strong>Operation: </strong> {{ operation }} <br>
     <strong>Result: </strong> {{ result }}
+  </div>
+
+
+    {% if data %}
+        <table class="container-fluid bg-1 center">
+            {% for item in data %}
+                <!--- This will not work you have to think about it--->
+                <table class="table">
+                    <tr>
+                        <th class="c1"><img src="{{ url_for('static', filename='images/download.png') }}" alt="image" height="40"></th>
+                        <th class="c2">{{ item.input_1 }}</th>
+                        <th class="c3">{{ item.input_2 }}</th>
+                        <th class="c4"><SPAN>{{ item.operation }}</SPAN></th>
+                        <th class="c5"><SPAN>{{ item.result }}</SPAN></th>
+                    </tr>
+                </table>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>There are no calculations</h1>
+    {% endif %}
+
+
+
+
+
 
 {% endblock %}
