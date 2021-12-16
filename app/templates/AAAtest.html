@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}AAA Testing{% endblock %}
 {% block head %}
     {{ super() }}
     <style type="text/css">
@@ -33,14 +33,14 @@
             <div>
                 <b>Examples</b>
             </div>
-            <div class="container-fluid text-center">
-                <div class="col-sm-6">
+            <div class="container-fluid text-center row">
+                <div class="col-sm-6 column">
                     <b>Simple unit test</b>
                     <div>
                         <img class="img-responsive" src="{{ url_for('static', filename='images/add_test.png') }}" width="75%" alt="">
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 column">
                     <b>Unit Test Using External data</b>
                     <div>
                         <img class="img-responsive" src="{{ url_for('static', filename='images/add_test_ext.png') }}" width="75%" alt="">

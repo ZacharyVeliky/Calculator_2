@@ -29,7 +29,7 @@ def calculator_post():
 
 @app.route("/table", methods=['GET'])
 def table_post():
-    return TableController.get()\
+    return TableController.get()
 
 
 @app.route("/pylint", methods=['GET'])
@@ -40,13 +40,17 @@ def pylint():
 @app.route("/AAAtest", methods=['GET'])
 def aaa_test():
     return render_template('AAAtest.html')
-#
-#
-# @app.route("/AAAtest", methods=['GET'])
-# def aaa_test():
-#     return render_template('AAAtest.html')
-#
-#
-# @app.route("/AAAtest", methods=['GET'])
-# def aaa_test():
-#     return render_template('AAAtest.html')
+
+
+@app.route("/oop", methods=['GET'])
+def oop():
+    return render_template('oop.html')
+
+
+@app.route("/soc", methods=['GET'])
+def soc():
+    return render_template('soc.html')
+
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=80, debug=True)

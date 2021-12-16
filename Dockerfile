@@ -11,4 +11,5 @@ WORKDIR /home/myuser
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 COPY --chown=myuser:myuser . .
 RUN pip install -r requirements.txt
+EXPOSE 80
 CMD ["uwsgi", "app/app.ini"]
