@@ -10,7 +10,6 @@ class CalculatorController(ControllerBase):
         if request.form['value1'] == '' or request.form['value2'] == '':
             error = 'You must enter a value for value 1 and or value 2'
         else:
-            # Calculator.getHistoryFromCSV()
             flash('You successfully calculated')
             # get the values out of the form
             value1 = request.form['value1']
@@ -33,7 +32,7 @@ class CalculatorController(ControllerBase):
                     'result': Calculator.get_last_result_value()}
             Calculator.writeHistoryToCSV(data)
             #
-            return render_template('result.html', data=Calculator.getHistory(), value1=value1, value2=value2,
+            return render_template('result.html', data=Calculator.getHistoryFromCSV(), value1=value1, value2=value2,
                                    operation=operation, result=result)
         return render_template('calculator.html', error=error)
 

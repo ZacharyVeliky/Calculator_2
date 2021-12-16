@@ -6,6 +6,7 @@ from calc.operations.addition import Addition
 from calc.operations.subtraction import Subtraction
 from calc.operations.multiplication import Multiplication
 from calc.operations.division import Division
+from csvmanager.read import Read
 from csvmanager.write import Write
 
 
@@ -18,11 +19,12 @@ class Calculations:
     @staticmethod
     def readHistoryFromCSV():
         """Read the history from csv and put it into the history """
+        return Read.ReadCSV(os.path.abspath('calc/history/history.csv'))
 
     @staticmethod
     def writeHistoryToCSV(data):
         """Write the history to csv file"""
-        Write.ToCSV(os.path.abspath('history.csv'), data)
+        Write.ToCSV(os.path.abspath('calc/history/history.csv'), data)
 
     @staticmethod
     def clear_history():

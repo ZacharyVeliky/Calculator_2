@@ -1,5 +1,5 @@
 """A simple flask web app"""
-from flask import Flask
+from flask import Flask, render_template
 
 # from app.controllers import table_controller
 from app.controllers.table_controller import TableController
@@ -29,4 +29,24 @@ def calculator_post():
 
 @app.route("/table", methods=['GET'])
 def table_post():
-    return TableController.get()
+    return TableController.get()\
+
+
+@app.route("/pylint", methods=['GET'])
+def pylint():
+    return render_template('pylint.html')
+
+
+@app.route("/AAAtest", methods=['GET'])
+def aaa_test():
+    return render_template('AAAtest.html')
+#
+#
+# @app.route("/AAAtest", methods=['GET'])
+# def aaa_test():
+#     return render_template('AAAtest.html')
+#
+#
+# @app.route("/AAAtest", methods=['GET'])
+# def aaa_test():
+#     return render_template('AAAtest.html')

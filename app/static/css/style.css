@@ -1,3 +1,20 @@
 body {
 font-size: 200%;
 }
+button{
+    color: #fbfcfd;
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 0px;
+}
