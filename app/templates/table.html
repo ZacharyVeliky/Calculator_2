@@ -1,35 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Calculator{% endblock %}
 {% block content %}
-  <table id="data" class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Input 1</th>
-        <th>Input 2</th>
-        <th>Operation</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-{% endblock %}
-
-{% block scripts %}
-  <script>
-    $(document).ready(function () {
-      $('#data').DataTable({
-        ajax: '/api/data',
-        serverSide: true,
-        columns: [
-          {data: 'id'},
-          {data: 'input_1'},
-          {data: 'input_2', orderable: false},
-          {data: 'operation', orderable: false},
-          {data: 'result'}
-        ],
-      });
-    });
-  </script>
+    {% if [data] %}
+        <table class="table">
+            <thead>
+                <th scope="col">Input 1</th>
+                <th scope="col">Input 2</th>
+                <th scope="col">Operation</th>
+                <th scope="col">Result</th>
+            </thead>
+            <tbody>
+            {% for i in range(length) %}
+                <tr>
+                    <th scope="col">{{ data.input_1[i] }}</th>
+                    <th scope="col">{{ data.input_2[i] }}</th>
+                    <th scope="col">{{ data.operation[i] }}</th>
+                    <th scope="col">{{ data.result[i] }}</th>
+                </tr>
+            {% endfor %}
+    {% else %}
+        <h1>There are no calculations</h1>
+    {% endif %}
+            </tbody>
+        </table>
 {% endblock %}

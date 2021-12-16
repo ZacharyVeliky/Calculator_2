@@ -27,6 +27,11 @@ class Calculations:
         Write.ToCSV(os.path.abspath('calc/history/history.csv'), data)
 
     @staticmethod
+    def historyCSVLength():
+        """Write the history to csv file"""
+        return Read.CSVLength(os.path.abspath('calc/history/history.csv'))
+
+    @staticmethod
     def clear_history():
         """clear the history of calculations"""
         Calculations.history.clear()

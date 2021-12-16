@@ -25,30 +25,27 @@
     <strong>Operation: </strong> {{ operation }} <br>
     <strong>Result: </strong> {{ result }}
   </div>
-
-
+<br>
+    <div class="container-fluid bg-1 text-center">
+        <h2>Result History</h2>
+    </div>
+<br>
 {#    {% if [data] %}#}
         <table class="table">
             <thead>
-                <th scope="col">Index</th>
                 <th scope="col">Input 1</th>
                 <th scope="col">Input 2</th>
                 <th scope="col">Operation</th>
                 <th scope="col">Result</th>
             </thead>
             <tbody>
-            {{data}}
-            {% for item in data %}
-
+            {% for i in range(length) %}
                 <tr>
-
-                    <th scope="col"><span>{{ "" }}</span></th>
-                    <th scope="col"><span>{{ input_1 }}</span></th>
-                    <th scope="col"><span>{{ input_2 }}</span></th>
-                    <th scope="col"><SPAN>{{ operation }}</SPAN></th>
-                    <th scope="col"><SPAN>{{ result }}</SPAN></th>
+                    <th scope="col">{{ data.input_1[i] }}</th>
+                    <th scope="col">{{ data.input_2[i] }}</th>
+                    <th scope="col">{{ data.operation[i] }}</th>
+                    <th scope="col">{{ data.result[i] }}</th>
                 </tr>
-
             {% endfor %}
 {#    {% else %}#}
 {#        <h1>There are no calculations</h1>#}
